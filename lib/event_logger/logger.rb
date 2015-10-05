@@ -3,9 +3,11 @@ require "json"
 
 module EventLogger
   class Logger
-    def initialize(application:, environment:, host:, type: "event", fake_requests: false)
+    def initialize(application:, environment:, host:, username:, password:, type: "event", fake_requests: false)
       @application = application
       @environment = environment
+      @username = username
+      @password = password
       @host = host
       @type = type
       @fake_requests = fake_requests
@@ -23,6 +25,7 @@ module EventLogger
       client = Net::HTTP.new(uri.host, uri.port)
       headers = { "User-Agent" => "AlphaSightsEventLogger/#{EventLogger::Logger} (+https://github.com/alphasights/event_logger)", "Accept" => "application/json" }
       post = Net::HTTP::Post.new(uri, headers)
+      post.basic_auth(@username, @password)
       client.use_ssl = uri.scheme == "https"
 
       client.request(post, JSON.generate(data))
