@@ -1,5 +1,7 @@
 # EventLogger
 
+![CircleCI Build Status](https://circleci.com/gh/alphasights/event_logger.svg?style=shield&circle-token=:circle-token)
+
 A really tiny event logger for sending events to elastic search
 
 ## Installation
