@@ -43,7 +43,7 @@ Dates and times will automatically be transformed to iso8601 strings
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/event_logger/fork )
+1. Fork it ( https://github.com/alphasights/event_logger/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am "Add some feature"`)
 4. Push to the branch (`git push origin my-new-feature`)
